@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Box Model CSS</title>
+    <style>
+        /* box-sizing: border-box – SANGAT DIREKOMENDASIKAN! */
+        /* Membuat width & height sudah termasuk padding & border */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            padding: 40px;
+        }
+
+        /* Properti Box Model */
+        .kotak {
+            /* Konten */
+            width: 300px;
+            height: 150px;
+
+            /* Padding: shorthand (atas kanan bawah kiri) */
+            padding: 20px 30px 20px 30px;
+            /* atau: padding: 20px 30px; (atas-bawah | kiri-kanan) */
+            /* atau: padding: 20px; (semua sisi sama) */
+
+            /* Border */
+            border: 3px solid #1A5276;
+            /* Shorthand: ketebalan | jenis | warna */
+            border-radius: 8px; /* Sudut membulat */
+
+            /* Margin */
+            margin: 20px auto;    /* atas-bawah: 20px, kiri-kanan: auto (tengah) */
+            
+            /* Tambahan warna latar belakang agar isi kotak terlihat jelas */
+            background-color: #ebf5fb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kotak">
+        Ini adalah elemen div dengan class <strong>.kotak</strong> yang menggunakan properti Box Model.
+    </div>
+
+</body>
+</html>

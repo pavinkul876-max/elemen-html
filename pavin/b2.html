@@ -1,0 +1,105 @@
+<!--/* Contoh penggunaan display */
+
+/* Membuat <a> (inline) menjadi block agar bisa diatur ukurannya */
+nav a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #1A5276;
+    color: white;
+}
+
+/* Membuat <li> (block) menjadi inline untuk navbar horizontal */
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Menyembunyikan elemen */
+.tersembunyi { display: none; }    /* Hilang dari layout */
+.transparan  { visibility: hidden; } /* Hilang tapi ruangnya tetap ada */
+```[cite: 5]
+
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Properti Display CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f4f7f6;
+        }
+
+        h3 {
+            color: #1A5276;
+        }
+
+        /* 1. Navbar horizontal menggunakan inline-block pada <li> */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /* 2. Mengubah <a> menjadi block */
+        nav a {
+            display: block;
+            padding: 10px 20px;
+            background-color: #1A5276;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: #154360;
+        }
+
+        /* 3. Contoh display: none vs visibility: hidden */
+        .kotak {
+            width: 200px;
+            padding: 15px;
+            background-color: #D4AC0D;
+            margin-bottom: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tersembunyi { 
+            display: none; /* Elemen benar-benar hilang dan tidak memakan ruang */
+        }
+
+        .transparan  { 
+            visibility: hidden; /* Elemen disembunyikan tapi ruang aslinya tetap kosong */
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Contoh Menu Navigasi (display: block & inline-block)</h3>
+    <nav>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <hr style="margin: 30px 0;">
+
+    <h3>Contoh display: none vs visibility: hidden</h3>
+    <div class="kotak">Kotak Normal 1</div>
+    <div class="kotak tersembunyi">Kotak display: none (Hilang total)</div>
+    <div class="kotak">Kotak Normal 2 (Berada tepat di bawah Kotak 1 karena Kotak 2 mengabaikan ruang Kotak display: none)</div>
+    <div class="kotak transparan">Kotak visibility: hidden (Ruangan ini kosong)</div>
+    <div class="kotak">Kotak Normal 3</div>
+
+</body>
+</html>
