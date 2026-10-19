@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLab - Web Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #F8FAFC;
+            color: #1E293B;
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #1A5276;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #E2E8F0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #334155;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1A5276;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+           KODE CSS KAMU
+           ========================================== */
+
+        /* === SELECTOR KOMBINASI === */
+
+        /* Descendant: semua <a> di dalam nav */
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        nav a:hover {
+            opacity: 0.85;
+        }
+
+        /* Child: hanya <li> langsung dari .menu */
+        .menu > li { 
+            display: inline-block; 
+            margin-right: 8px;
+            color: #1A5276;
+        }
+
+        /* nth-child: baris genap tabel warna berbeda (zebra striping) */
+        tr:nth-child(even) { 
+            background-color: #F2F3F4; 
+        }
+        tr:nth-child(odd) { 
+            background-color: white; 
+        }
+
+        /* Setiap 3 elemen, mulai dari elemen ke-1 (1, 4, 7, 10...) */
+        li:nth-child(3n+1) { 
+            font-weight: bold; 
+        }
+
+
+        /* === PSEUDO-CLASS === */
+
+        .tombol {
+            background: #2E86C1;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .tombol:hover { 
+            background: #1A5276; 
+            transform: translateY(-2px); 
+        }
+
+        .tombol:active { 
+            transform: translateY(0); 
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2E86C1;
+            box-shadow: 0 0 0 3px rgba(46, 134, 193, 0.3);
+        }
+
+
+        /* === PSEUDO-ELEMENT === */
+
+        /* Menambahkan ikon sebelum judul section */
+        h2::before {
+            content: '▶ ';
+            color: #2E86C1;
+        }
+
+        /* Garis dekoratif setelah judul */
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #D4AC0D;
+            margin-top: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Huruf pertama diperbesar (drop cap) */
+        p.artikel::first-letter {
+            font-size: 3em;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            color: #1A5276;
+        }
+
+        /* Warna teks yang diseleksi */
+        ::selection {
+            background: #AED6F1;
+            color: #1A5276;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">DevLab.</div>
+            <nav>
+                <a href="#">Beranda</a> &nbsp;|&nbsp; 
+                <a href="#">Artikel</a> &nbsp;|&nbsp; 
+                <a href="#">Portofolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Section 1: Sub Menu List -->
+        <div class="card">
+            <h2>Kategori Pilihan</h2>
+            <ul class="menu">
+                <li>• Web Development</li>
+                <li>• UI/UX Design</li>
+                <li>• Mobile App</li>
+                <li>• Cloud Computing</li>
+                <li>• Cybersecurity</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Artikel / Drop Cap -->
+        <div class="card">
+            <h2>Artikel Terbaru</h2>
+            <p class="artikel">
+                Pengembangan web modern membutuhkan pemahaman mendalam tentang struktur CSS dan pola selector yang efisien. Dengan memanfaatkan pseudo-class dan pseudo-element secara tepat, tampilan antarmuka interaktif dapat dibangun secara elegan tanpa memerlukan script yang berlebihan.
+            </p>
+        </div>
+
+        <!-- Section 3: Form Interaktif -->
+        <div class="card">
+            <h2>Pendaftaran Akun</h2>
+            <form onSubmit="return false;">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Ketik nama lengkap kamu di sini...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email / Username</label>
+                    <input type="text" id="email" placeholder="Masukkan alamat email...">
+                </div>
+                <button type="submit" class="tombol">Kirim Data</button>
+            </form>
+        </div>
+
+        <!-- Section 4: Tabel Data / Zebra Striping -->
+        <div class="card">
+            <h2>Data Anggota</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Siswa</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Alex Vance</td>
+                            <td>Aktif</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Budi Pratama</td>
+                            <td>Aktif</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Citra Dewi</td>
+                            <td>Alumni</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Dian Sastro</td>
+                            <td>Aktif</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

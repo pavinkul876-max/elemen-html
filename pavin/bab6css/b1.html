@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Implementasi CSS</title>
+    <style>
+        /* Masukkan kode CSS kamu di sini atau simpan terpisah sebagai style.css */
+        nav a { color: white; text-decoration: none; background: #1A5276; padding: 5px 10px; }
+        .menu > li { display: inline-block; margin-right: 8px; color: #1A5276; }
+        tr:nth-child(even) { background-color: #F2F3F4; }
+        tr:nth-child(odd) { background-color: white; }
+        li:nth-child(3n+1) { font-weight: bold; }
+        .tombol { background: #2E86C1; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+        .tombol:hover { background: #1A5276; transform: translateY(-2px); }
+        .tombol:active { transform: translateY(0); }
+        input:focus {
+            outline: none;
+            border-color: #2E86C1;
+            box-shadow: 0 0 0 3px rgba(46, 134, 193, 0.3);
+        }
+        h2::before {
+            content: '▶ ';
+            color: #2E86C1;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #D4AC0D;
+            margin-top: 8px;
+        }
+        p.artikel::first-letter {
+            font-size: 3em;
+            font-weight: bold;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            color: #1A5276;
+        }
+        ::selection {
+            background: #AED6F1;
+            color: #1A5276;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigasi (Descendant selector: nav a) -->
+    <nav>
+        <a href="#">Beranda</a>
+        <a href="#">Profil[cite: 1]</a>
+        <a href="#">Kontak[cite: 1]</a>
+    </nav>
+
+    <!-- 2. Menu List (Child selector: .menu > li & nth-child) -->
+    <ul class="menu">
+        <li>Menu Pertama (Item ke-1, bold)[cite: 1]</li>
+        <li>Menu Kedua[cite: 1]</li>
+        <li>Menu Ketiga[cite: 1]</li>
+        <li>Menu Keempat (Item ke-4, bold)[cite: 1]</li>
+    </ul>
+
+    <!-- 3. Judul Section (Pseudo-element h2::before & h2::after) -->
+    <section>
+        <h2>Judul Artikel Pilihan</h2>
+        <p class="artikel">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+    </section>
+
+    <!-- 4. Tabel dengan Zebra Striping (tr:nth-child) -->
+    <section>
+        <h2>Tabel Data</h2>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Data Baris Ganjil (Putih)[cite: 1]</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Data Baris Genap (Abu-abu)[cite: 1]</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Data Baris Ganjil (Putih)[cite: 1]</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- 5. Tombol & Input (Pseudo-class :hover, :active, :focus) -->
+    <section>
+        <h2>Interaksi Form</h2>
+        <p>
+            <input type="text" placeholder="Klik untuk fokus input...">[cite: 1]
+        </p>
+        <p>
+            <button class="tombol">Tombol Aksi</button>[cite: 1]
+        </p>
+    </section>
+
+</body>
+</html>
